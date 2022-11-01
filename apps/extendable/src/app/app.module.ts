@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
+import { fundamentalRoutes } from '@core/routing/fundamental-routes';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, HttpClientModule, MatCardModule, MatButtonModule, BrowserAnimationsModule],
-  exports: [MatCardModule, MatButtonModule],
+  declarations: [AppComponent],
+  imports: [CoreModule, RouterModule.forRoot(fundamentalRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })

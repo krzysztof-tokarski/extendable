@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@extendable/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@core/*": ["./apps/extendable/src/app/core/*"],
+      "@environments/*": ["./apps/extendable/src/environments/*"],
+      "@extendable/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@features/*": ["./apps/extendable/src/app/features/*"],
+      "@shared/*": ["./apps/extendable/src/app/shared/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
