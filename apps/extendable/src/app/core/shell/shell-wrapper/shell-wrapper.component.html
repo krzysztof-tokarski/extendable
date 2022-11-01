@@ -1,1 +1,21 @@
-<p>shell-wrapper works!</p>
+<mat-toolbar id="toolbar" color="accent">
+  <button (click)="drawer.toggle()" mat-icon-button aria-label="Open drawer menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="uppercase">Extendable</span>
+  <span class="flex-expand"></span>
+  <button mat-icon-button aria-label="Add the page to favourites">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Share">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<mat-drawer-container id="drawer-container" autosize>
+  <mat-drawer #drawer mode="side">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
