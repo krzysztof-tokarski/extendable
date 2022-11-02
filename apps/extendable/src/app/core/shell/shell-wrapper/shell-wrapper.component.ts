@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'extendable-shell-wrapper',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shell-wrapper.component.scss'],
 })
 export class ShellWrapperComponent implements OnInit {
-  constructor() {}
+  @ViewChild('drawer', { static: true }) public drawer!: MatDrawer;
 
-  ngOnInit(): void {}
+  constructor(protected router: Router) {}
+
+  public ngOnInit(): void {
+    this.drawer.open();
+    console.log('XD');
+  }
 }

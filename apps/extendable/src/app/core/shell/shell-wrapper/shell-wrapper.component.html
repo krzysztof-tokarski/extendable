@@ -2,20 +2,24 @@
   <button (click)="drawer.toggle()" mat-icon-button aria-label="Open drawer menu">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="uppercase">Extendable</span>
+  <span class="is-uppercase">Extendable</span>
   <span class="flex-expand"></span>
   <button mat-icon-button aria-label="Add the page to favourites">
-    <mat-icon>favorite</mat-icon>
+    <mat-icon fontIcon="favorite"></mat-icon>
   </button>
   <button mat-icon-button aria-label="Share">
-    <mat-icon>share</mat-icon>
+    <mat-icon fontIcon="share"></mat-icon>
   </button>
 </mat-toolbar>
 
 
 <mat-drawer-container id="drawer-container" autosize>
   <mat-drawer #drawer mode="side">
-    <p>Auto-resizing sidenav</p>
+    <div class="is-flex is-align-items-center p-3">
+      <mat-icon fontIcon="today"></mat-icon>
+      <a mat-button routerLink="/app/today">Today</a>
+    </div>
+
   </mat-drawer>
   <router-outlet></router-outlet>
 </mat-drawer-container>

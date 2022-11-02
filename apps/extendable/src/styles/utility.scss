@@ -1,12 +1,8 @@
-.flex-row {
-  width: 100%;
+.flex-container-center {
   display: flex;
+  align-items: center;
 }
 
 .flex-expand {
   flex: 1 1 auto;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
