@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { TodayWrapperComponent } from '@features/today/today-wrapper/today-wrapper.component';
+import { TodayWrapperComponent } from '@features/todos/today/today-wrapper/today-wrapper.component';
 
 export const todayModuleRoutes: Route[] = [
   {

@@ -15,10 +15,11 @@ export const appModuleRoutes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'auth',
+    redirectTo: 'app',
   },
   {
     path: '**',
-    redirectTo: 'auth',
+    redirectTo: 'app',
   },
+  // TODO change redirects to auth or 404
 ];

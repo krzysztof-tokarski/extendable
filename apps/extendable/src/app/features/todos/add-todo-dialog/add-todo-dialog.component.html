@@ -1,0 +1,20 @@
+<form class="is-flex is-flex-direction-column" [formGroup]="form">
+  {{form.value | json}}
+  <mat-form-field>
+    <input formControlName="title" placeholder="Title" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea formControlName="description" maxlength="256" placeholder="Description" matInput cdkTextareaAutosize
+      resizeToFitContent></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input formControlName="deadline" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div class="is-flex is-flex-direction-row is-justify-content-flex-end gap-10">
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button color="accent">Add</button>
+  </div>
+</form>

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { AddTodoDialogComponent } from '@features/todos/add-todo-dialog/add-todo-dialog.component';
 
 @Component({
   selector: 'extendable-shell-wrapper',
@@ -8,12 +10,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./shell-wrapper.component.scss'],
 })
 export class ShellWrapperComponent implements OnInit {
+  // TODO remove
   @ViewChild('drawer', { static: true }) public drawer!: MatDrawer;
-
-  constructor(protected router: Router) {}
-
   public ngOnInit(): void {
     this.drawer.open();
-    console.log('XD');
+  }
+
+  constructor(protected router: Router, private dialog: MatDialog) {}
+
+  protected openAddTodoDialog() {
+    this.dialog.open(AddTodoDialogComponent, {
+      width: '400px',
+      position: { top: '100px' },
+      backdropClass: 'is-transparent',
+      ariaLabel: 'Add Todo dialog',
+    });
   }
 }

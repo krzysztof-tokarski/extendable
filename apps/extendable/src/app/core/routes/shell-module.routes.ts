@@ -9,7 +9,7 @@ export const shellModuleRoutes: Route[] = [
       {
         path: 'today',
         loadChildren: async () =>
-          (await import('@features/today/today.module')).TodayModule,
+          (await import('@features/todos/today/today.module')).TodayModule,
       },
       {
         path: '',
