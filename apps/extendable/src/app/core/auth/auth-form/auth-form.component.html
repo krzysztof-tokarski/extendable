@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>login</mat-label>
+    <input matInput formControlName="login">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+  <button (click)="addUser()">send</button>
+</form>

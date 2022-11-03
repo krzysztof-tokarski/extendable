@@ -1,1 +1,1 @@
-export * from './lib/api-interfaces';
+export * from './lib/todos/create-todo-dto.model';

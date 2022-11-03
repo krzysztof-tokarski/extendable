@@ -8,6 +8,9 @@ import {
 } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SharedModule } from '@shared/shared.module';
+import { CustomValidators } from '@shared/validation/custom-validators';
+import { CreateTodoDto } from 'libs/api-interfaces/src';
+import { TodosApiService } from '../services/todos-api.service';
 import { AddTodoFormGroup } from './models/add-todo-form.type';
 
 @Component({
@@ -22,14 +25,31 @@ export class AddTodoDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AddTodoDialogComponent>,
-    private fb: NonNullableFormBuilder
+    private fb: NonNullableFormBuilder,
+    private todosApi: TodosApiService
   ) {}
 
   private createForm(): AddTodoFormGroup {
     return this.fb.group({
-      title: ['', [Validators.required]],
-      description: [''],
-      deadline: ['', [Validators.required]],
+      title: this.fb.control('', { validators: [Validators.required] }),
+      description: this.fb.control('', {
+        validators: CustomValidators.standardTextAreaComposition,
+      }),
+      deadline: this.fb.control(new Date(), [Validators.required]),
     });
+  }
+
+  // TODO proper implementation
+  protected processSubmit() {
+    const { title, description, deadline } = this.form.value;
+
+    const createTodoDto = {
+      title,
+      description,
+      deadline,
+      userId: '636417968f9dfa630038a5da',
+    } as CreateTodoDto;
+
+    this.todosApi.createTodo(createTodoDto);
   }
 }

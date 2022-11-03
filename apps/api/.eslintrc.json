@@ -11,6 +11,20 @@
       "rules": {}
     },
     {
+      "files": ["*.model.ts"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": "off",
+        "@typescript-eslint/explicit-member-accessibility": ["warn",
+        {
+          "overrides": {
+            "properties": "off"
+          }
+        }
+        ]
+      }
+    },
+    {
       "files": ["*.js", "*.jsx"],
       "rules": {}
     }
