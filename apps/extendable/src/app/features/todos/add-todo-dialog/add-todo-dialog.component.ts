@@ -7,9 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { CreateTodoDto } from '@models/todos/create-todo-dto.model';
 import { SharedModule } from '@shared/shared.module';
 import { CustomValidators } from '@shared/validation/custom-validators';
-import { CreateTodoDto } from 'libs/api-interfaces/src';
 import { TodosApiService } from '../services/todos-api.service';
 import { AddTodoFormGroup } from './models/add-todo-form.type';
 
@@ -41,15 +41,9 @@ export class AddTodoDialogComponent {
 
   // TODO proper implementation
   protected processSubmit() {
-    const { title, description, deadline } = this.form.value;
-
-    const createTodoDto = {
-      title,
-      description,
-      deadline,
+    this.todosApi.createTodo({
+      ...this.form.value,
       userId: '636417968f9dfa630038a5da',
-    } as CreateTodoDto;
-
-    this.todosApi.createTodo(createTodoDto);
+    } as CreateTodoDto);
   }
 }

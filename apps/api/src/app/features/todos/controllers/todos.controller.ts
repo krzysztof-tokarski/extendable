@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { TodosMdbService } from '../services/todos-mdb.service';
 import { CreateTodoDto } from '@models/todos/create-todo-dto.model';
 
