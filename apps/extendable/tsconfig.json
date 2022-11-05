@@ -25,8 +25,7 @@
       "@core/*": ["./apps/extendable/src/app/core/*"],
       "@environments/*": ["./apps/extendable/src/environments/*"],
       "@features/*": ["./apps/extendable/src/app/features/*"],
-      "@shared/*": ["./apps/extendable/src/app/shared/*"],
-      "@models/": ["/libs/api-interfaces/src/index.ts"]
+      "@shared/*": ["./apps/extendable/src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {
