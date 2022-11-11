@@ -52,7 +52,7 @@ export class AuthService {
 
     return {
       user: { email: user.email, id: user.id },
-      accessToken: this.jwtService.sign(payload),
+      jwt: this.jwtService.sign(payload),
     };
   }
 

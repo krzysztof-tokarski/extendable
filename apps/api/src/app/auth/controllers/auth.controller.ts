@@ -39,7 +39,7 @@ export class AuthController {
   // public getProfile(@Req() req) {
   //   return req.user;
   // }
-
+  @Public()
   @Post('sign-out')
   public signOut(@Body() signInUserDto: SignInUserDto, @Res() res: Response) {}
 

@@ -10,6 +10,7 @@ import { AppState } from '../store/app.state';
 import { userReducer } from '../store/user/user.reducer';
 import { AuthService } from './auth/services/auth.service';
 import { authReducer } from '../store/auth/auth.reducer';
+import { JwtInterceptor } from './auth/jwt/jwt.interceptor';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { authReducer } from '../store/auth/auth.reducer';
   providers: [
     ToastrService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     // TODO provide proper callback?
     { provide: APP_INITIALIZER, useFactory: () => {}, deps: [AuthService] },
   ],

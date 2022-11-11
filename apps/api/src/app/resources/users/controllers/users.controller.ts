@@ -1,4 +1,4 @@
-import { Body, Controller, HttpStatus, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
 import { UsersMdbService } from '../services/users-mdb.service';
 import { CreateUserDto } from '@models/users/create-user-dto.model';
 import { Response } from 'express';
@@ -28,4 +28,9 @@ export class UsersController {
       res.send();
     });
   }
+
+  // @Get()
+  // public async find(@Res() res: Response) {
+  //   res.send(query);
+  // }
 }
