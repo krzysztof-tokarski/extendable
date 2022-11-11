@@ -1,8 +1,8 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Todo, TodoDocument } from '../models/todo.model';
-import { CreateTodoDto } from 'libs/api-interfaces/src';
+import { Todo } from '../models/todo.model';
+import { CreateTodoDto } from '@models/todos/create-todo-dto.model';
 
 @Injectable()
 export class TodosMdbService {

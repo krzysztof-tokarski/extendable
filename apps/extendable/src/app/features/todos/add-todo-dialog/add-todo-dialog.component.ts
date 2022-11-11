@@ -6,18 +6,32 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { CreateTodoDto } from '@models/todos/create-todo-dto.model';
 import { SharedModule } from '@shared/shared.module';
 import { CustomValidators } from '@shared/validation/custom-validators';
 import { TodosApiService } from '../services/todos-api.service';
 import { AddTodoFormGroup } from './models/add-todo-form.type';
 
+const MATERIAL_IMPORTS = [
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatDialogModule,
+];
+
 @Component({
   selector: 'extendable-add-todo-dialog',
   templateUrl: './add-todo-dialog.component.html',
   styleUrls: ['./add-todo-dialog.component.scss'],
-  imports: [CommonModule, SharedModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MATERIAL_IMPORTS,
+  ],
   standalone: true,
 })
 export class AddTodoDialogComponent {

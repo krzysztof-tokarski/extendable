@@ -1,3 +1,18 @@
+.is-full-height {
+  height: 100%;
+}
+
+.is-full-width {
+  width: 100%;
+}
+
+.is-centered-flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .gap-10 {
   gap: 10px;
 }
@@ -5,3 +20,8 @@
 .flex-expand {
   flex: 1 1 auto;
 }
+
+.sm-line-height {
+  line-height: 15px;
+}
+

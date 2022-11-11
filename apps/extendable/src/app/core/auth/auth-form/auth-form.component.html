@@ -1,15 +1,22 @@
-<form [formGroup]="form">
-  <mat-form-field>
-    <mat-label>email</mat-label>
-    <input matInput formControlName="email">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>login</mat-label>
-    <input matInput formControlName="login">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>password</mat-label>
-    <input matInput formControlName="password">
-  </mat-form-field>
-  <button (click)="addUser()">send</button>
-</form>
+<header class="is-uppercase has-text-weight-bold has-text-centered is-size-3 is-full-width accent p-2">Extendable
+</header>
+<mat-card class="mat-elevation-z2 is-flex is-flex-direction-column gap-10">
+  <header [textContent]="currentSetting.header" class="is-uppercase has-text-centered is-size-4">
+  </header>
+  <form id="form" class="is-flex is-flex-direction-column is-align-items-center" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>password</mat-label>
+      <input type="password" matInput formControlName="password">
+    </mat-form-field>
+    <button [disabled]="form.invalid" class="is-uppercase" mat-raised-button color="accent"
+      (click)="processSubmit()">{{currentSetting.buttonText}}</button>
+  </form>
+  <footer class="is-flex is-justify-content-center is">
+    <p>{{currentSetting.alternateLinkQuestion}} <a
+        [routerLink]="currentSetting.alternateLink">{{currentSetting.alternateLinkText}}</a></p>
+  </footer>
+</mat-card>

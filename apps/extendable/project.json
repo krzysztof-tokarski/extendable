@@ -4,6 +4,12 @@
   "projectType": "application",
   "sourceRoot": "apps/extendable/src",
   "prefix": "extendable",
+  "permissions": [
+    "browser",
+    "tabs",
+    "bookmarks",
+    "unlimitedStorage"
+  ],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -24,8 +30,7 @@
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/extendable/src/styles/styles.scss"
-        ],
-        "scripts": []
+        ]
       },
       "configurations": {
         "production": {

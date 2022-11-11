@@ -1,5 +1,10 @@
+$material-accent: #ffd740;
 $white-off: #F8EBE4;
 
 .white{
   color: $white-off;
+}
+
+.accent {
+  background-color: $material-accent;
 }

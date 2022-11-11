@@ -1,0 +1,12 @@
+@use 'apps/extendable/src/styles/utility.scss';
+
+:host {
+  @extend .gap-10;
+  @extend .is-full-height;
+  @extend .is-centered-flex-column;
+
+  #form {
+    width: 400px;
+  }
+}
+

@@ -4,14 +4,20 @@
   </button>
   <span class="is-uppercase">Extendable</span>
   <span class="flex-expand"></span>
+  <p class="m-4 sm-line-height is-size-7 is-uppercase" *ngIf="currentUser$ | async as currentUser">Welcome<br>
+    <span class="has-text-weight-bold	">{{currentUser.email}}</span>
+  </p>
   <button (click)="openAddTodoDialog()" mat-icon-button aria-label="Add new todo">
     <mat-icon fontIcon="add"></mat-icon>
   </button>
-  <button mat-icon-button aria-label="Add the page to favourites">
+  <!-- <button mat-icon-button aria-label="Add the page to favourites">
     <mat-icon fontIcon="favorite"></mat-icon>
-  </button>
-  <button mat-icon-button aria-label="Share">
+  </button> -->
+  <!-- <button mat-icon-button aria-label="Share">
     <mat-icon fontIcon="share"></mat-icon>
+  </button> -->
+  <button (click)="authService.signOut()" mat-icon-button aria-label="Sign-out">
+    <mat-icon fontIcon="logout"></mat-icon>
   </button>
 </mat-toolbar>
 

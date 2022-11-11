@@ -1,6 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["**/*.ts", "../api/src/app/features/todos/controllers/todos.controller.ts"],
+  "include": [
+    "**/*.ts",
+    "../api/src/app/features/todos/controllers/todos.controller.ts",
+    "src/app/core/shell/misc/create-bookmark.function.js"
+  ],
   "compilerOptions": {
     "types": ["jest", "node"]
   }

@@ -1,20 +1,29 @@
 import { Route } from '@angular/router';
 import { AuthFormComponent } from '@core/auth/auth-form/auth-form.component';
-import { AuthWrapperComponent } from '@core/auth/auth-wrapper/auth-wrapper.component';
+
+enum AuthModuleRoutes {
+  SIGN_IN = 'sign-in',
+  SIGN_UP = 'sign-up',
+}
 
 export const authModuleRoutes: Route[] = [
   {
-    path: 'register',
+    path: AuthModuleRoutes.SIGN_IN,
     title: 'Log in to Extendable',
+    component: AuthFormComponent,
+  },
+  {
+    path: AuthModuleRoutes.SIGN_UP,
+    title: 'Sign up to Extendable',
     component: AuthFormComponent,
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'register',
+    redirectTo: AuthModuleRoutes.SIGN_IN,
   },
   {
     path: '**',
-    redirectTo: 'register',
+    redirectTo: AuthModuleRoutes.SIGN_IN,
   },
 ];

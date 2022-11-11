@@ -26,12 +26,22 @@
     "@angular/router": "~14.2.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/jwt": "^9.0.0",
     "@nestjs/mongoose": "^9.2.1",
+    "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@ngrx/store": "^14.3.2",
     "@nrwl/angular": "15.0.4",
+    "bcryptjs": "^2.4.3",
     "bulma": "^0.9.4",
     "concurrently": "^7.5.0",
     "mongoose": "^6.7.0",
+    "ngx-build-plus": "^14.0.0",
+    "ngx-toastr": "^15.2.1",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0",
@@ -56,8 +66,11 @@
     "@nrwl/node": "15.0.4",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.0.4",
+    "@types/bcryptjs": "^2.4.2",
     "@types/jest": "28.1.1",
     "@types/node": "18.7.1",
+    "@types/passport-jwt": "^3.0.7",
+    "@types/passport-local": "^1.0.34",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.0",
@@ -75,5 +88,8 @@
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2"
+  },
+  "browser": {
+    "crypto": false
   }
 }
